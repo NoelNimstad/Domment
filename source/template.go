@@ -8,6 +8,9 @@ import (
 //go:embed template/index.html
 var templateIndex []byte
 
+//go:embed template/base.css
+var templateStylesheet []byte
+
 var Templates struct {
 	Index *template.Template
 }

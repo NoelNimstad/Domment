@@ -49,5 +49,15 @@ func Generate(files []ParsedFile, out string) {
 		}
 	}
 
+	f, err := os.Create(path.Join(out, "base.css"))
+	check(err)
+
+	{
+		_, err := f.Write(templateStylesheet)
+		check(err)
+	}
+
+	f.Close()
+
 	MakeHome(out)
 }
