@@ -19,7 +19,7 @@ func main() {
 	InitialiseTemplates()
 
 	path := "./"
-	out := "../out/"
+	out := "../docs/"
 
 	entries, err := os.ReadDir(path)
 	check(err)
