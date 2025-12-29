@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="base.css">
+    </head>
+    <body>
+        <header>
+            <h1>{{ .ProjectName }}</h1>
+            <p><b>Version {{ .Version }}</b> — Generated {{ .Date }}</p>
+        </header>
+        <main>
+            <h2><span class="gray">Φ</span> Files</h2>
+            <ul>
+                {{ range .Files }}
+                <a href="pages/{{ . }}.html"><li>{{ . }}</li></a>
+                {{ end }}
+            </ul>
+            <h2><span class="gray">Σ</span> Symbols</h2>
+            <h3><span class="gray">ƒ</span> Functions</h3>
+        </main>
+    </body>
+</html>
