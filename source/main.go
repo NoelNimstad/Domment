@@ -22,10 +22,15 @@ func main() {
 	out := "../docs/"
 
 	entries, err := os.ReadDir(path)
+
 	check(err)
 
 	var files []ParsedFile
 	for _, v := range entries {
+		if v.IsDir() {
+			continue
+		}
+
 		files = append(files, ParsedFile{
 			path:     v.Name(),
 			domments: Document(path, v.Name()),
